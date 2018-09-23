@@ -11,10 +11,16 @@ public static double Back(int B,int R,int C,int t)
 	return volt;
 }
 
-public class Test {
+public class Circuit{
 	public static void main(String[] args) throw FileNotFoundException {
 		
-		Scanner in = new Scanner(new File("params.txt"));
+		Scanner input = new Scanner(new File("params.txt"));
+		
+		int B = input.nextInt();
+		int R = input.nextInt();
+		double C = input.nextDouble();
+		int Beg = input.nextInt();
+		int End = input.nextInt();
 		
 
 	}
