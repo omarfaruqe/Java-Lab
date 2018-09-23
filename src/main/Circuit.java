@@ -41,6 +41,7 @@ public class Circuit
 				out.printf("%1f %1f\n",i,ans);
 			}
 		}
+		
 		in.close();
 		
 		out.close();
