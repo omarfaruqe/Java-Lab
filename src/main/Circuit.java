@@ -25,7 +25,11 @@ public class Circuit{
 		
 		FileWriter FWriter = new FileWriter("rc.txt");
 
-		
+		for(int i = beg; i <= End; i = i + 10) {
+			printWriter.printf("%d %f\n", t, Back(B, R, C, t));
+			printWriter.close();
+			in.close();
+		}
 		
 	}
 
