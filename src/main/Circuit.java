@@ -2,6 +2,7 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -18,11 +19,14 @@ public class Circuit{
 		
 		int B = input.nextInt();
 		int R = input.nextInt();
-		double C = input.nextDouble();
+		int C = input.nextDouble();
 		int Beg = input.nextInt();
 		int End = input.nextInt();
 		
+		FileWriter FWriter = new FileWriter("rc.txt");
 
+		
+		
 	}
 
 }
