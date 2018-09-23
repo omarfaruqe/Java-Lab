@@ -6,13 +6,15 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+public class Circuit {
+	
 public static double Back(int B,int R,int C,int t)
 {
 	double volt = B * (1 - Math.pow(e, (-t / (double)(R * C))));
 	return volt;
 }
-
-public class Circuit{
+	public static final double e = 2.71828;
+	
 	public static void main(String[] args) throw FileNotFoundException {
 		
 		Scanner input = new Scanner(new File("params.txt"));
@@ -27,10 +29,9 @@ public class Circuit{
 
 		for(int i = beg; i <= End; i = i + 10) {
 			printWriter.printf("%d %f\n", t, Back(B, R, C, t));
-			printWriter.close();
-			in.close();
 		}
+		printWriter.close();
+		in.close();
 		
 	}
-
 }
