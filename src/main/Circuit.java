@@ -1,11 +1,14 @@
 package main;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Circuit {
-	public static void main(String[] args) throws FileNotFoundException
+	public static void main(String[] args) throws IOException
 	{
 		File file = new File("D:\\Academic\\2-2\\Java_Practice\\eclipse\\Lab Test 1\\src\\input.txt"); 
 		Scanner sc = new Scanner(file); 
@@ -25,7 +28,14 @@ public class Circuit {
 			for(double i = t0; i<=tn; i=i+T) {
 				double ep = 1 / (Math.pow(e, (rc*i)));
 				double v = B*(1-ep);
-				System.out.println(i+"  "+v);
+				
+				File fileName = new  File("D:\\Academic\\2-2\\Java_Practice\\eclipse\\Lab Test 1\\src\\output.txt");
+			    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+			    writer.append("\n"+i+"  "+v);
+			    
+			    writer.close();
+				
+				//System.out.println(i+"  "+v);
 			}
 		}	      
 	}
