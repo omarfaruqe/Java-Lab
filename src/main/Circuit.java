@@ -32,7 +32,7 @@ public class Circuit {
 			for(int i=0;i<100;i++) {
 				t=t+incriment;
 				
-				double v = (1-(Math.exp((ps*t)*(-1))))*B;
+				double v = (1-(Math.exp(ps*t*(-1))))*B;
 					
 				printWriter.printf("%f %f \n",t,v);
 	
@@ -45,6 +45,7 @@ public class Circuit {
 			exception.printStackTrace();
 		}catch(IOException exception) {
 			exception.printStackTrace();
+			
 		}
 	}
 
