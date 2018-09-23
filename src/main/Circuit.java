@@ -11,16 +11,17 @@ public class Circuit {
 		Scanner sc = new Scanner(file); 
 			  
 		if (sc.hasNextDouble()) {
-			double t0 = sc.nextInt();
-			double tn = sc.nextInt();
-			
 			double B = sc.nextDouble();
 			double R = sc.nextDouble();
 			double C = sc.nextDouble();
+			
+			double t0 = sc.nextInt();
+			double tn = sc.nextInt();
+			
 			double e = 2.7183;
 			double rc = 1/(R*C);
 			
-			double T = tn/100;
+			double T = (tn-t0)/100;
 			for(double i = t0; i<=tn; i=i+T) {
 				double ep = 1 / (Math.pow(e, (rc*i)));
 				double v = B*(1-ep);
@@ -29,4 +30,3 @@ public class Circuit {
 		}	      
 	}
 }
-
