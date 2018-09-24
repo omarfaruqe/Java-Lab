@@ -42,6 +42,3 @@ public class Circuit {
 	}
 
 }
-© 2018 GitHub, Inc.
-Terms
-Privacy
