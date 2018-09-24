@@ -1,13 +1,15 @@
 package main;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Circuit {
+public class ElectricCircuit {
+
 	public static void main(String[] args) throws FileNotFoundException {
-		
+	
 		final int TEN=10;
 		final int ZERO=0;
 		final int ONE=1;
@@ -32,7 +34,6 @@ public class Circuit {
 			Voltage = B*(ONE - Math.pow(e , (MINUS*i/(R*C))));
 			out.println(Voltage);
 		}
-		in.close();
 		out.close();
 		}
 		catch(IOException exception) {
