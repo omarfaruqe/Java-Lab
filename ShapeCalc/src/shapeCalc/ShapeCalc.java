@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import shapes.SquareFactory;
+
 public class ShapeCalc extends AFrame {
 
 	public ShapeCalc(String title) {
@@ -38,8 +40,12 @@ public class ShapeCalc extends AFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				
-				String text = typeTF.getText();
-				areaLbl.setText(text);
+				SquareFactory sF=new SquareFactory();
+				areaLbl.setText("Area: "+Double.toString(sF.makeShape().getArea()));
+				
+				
+//				String text = typeTF.getText();
+//				areaLbl.setText(text);
 				
 			}
 			
