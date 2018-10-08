@@ -10,7 +10,6 @@ public class ShapeCalcController {
 	}
 
 	public static void main(String[] args){
-		System.out.println("ShapeCalcController Runned");
 		new ShapeCalcController();
 	}
 }
