@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class ShapeCalc extends AFrame{
+	private JLabel areaLbl;
+	private JTextField typeTF;
+	String text;
 
 	public ShapeCalc(String title) {
 		super(title);
@@ -22,14 +25,18 @@ public class ShapeCalc extends AFrame{
 		setLocationRelativeTo(null);
 		JPanel ctrlPnl = new JPanel();
 		JPanel displayPnl = new JPanel();
-		JLabel areaLbl = new JLabel("Area: ");
+		
+		areaLbl = new JLabel("Area: ");
+		
+		typeTF = new JTextField("Square");
+		JButton newBtn = new JButton("new...");
+		text = areaLbl.getText();
+		areaLbl.setText(text);
 		Container cp;
 		cp = (Container) getContentPane().add(areaLbl);
 		add(ctrlPnl, BorderLayout.NORTH);
 		add(displayPnl, BorderLayout.CENTER);
 		add(areaLbl, BorderLayout.SOUTH);
-		JTextField typeTF = new JTextField("Square");
-		JButton newBtn = new JButton("new...");
 		ctrlPnl.add(typeTF);
 		ctrlPnl.add(newBtn);
 		ActionListener listener = new AddActionListener();
@@ -38,7 +45,7 @@ public class ShapeCalc extends AFrame{
 	class AddActionListener implements ActionListener{
 		public void actionPerformed(ActionEvent event){
 			System.out.println("ActionListener Called and ActionPerformed");
-			JButton button = (JButton)event.getSource();
+			areaLbl.setText(text+typeTF.getText());
 		}
 	}
 }
