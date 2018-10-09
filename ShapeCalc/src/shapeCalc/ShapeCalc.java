@@ -35,7 +35,6 @@ public class ShapeCalc  extends AFrame {
 				super.paintComponent(g);
 		
 				SquareFactory.get().makeShape().paint(g,130,90);
-				
 				//System.out.println("Print hoyse");
 			}
 		};
@@ -54,6 +53,9 @@ public class ShapeCalc  extends AFrame {
 		newBtn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent event) {
+				
+				displayPnl.repaint();
+				//displayPnl.paintComponent(Graphics g);
 				
 				SquareFactory sq = SquareFactory.get();
 				
