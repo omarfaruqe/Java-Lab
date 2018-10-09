@@ -2,6 +2,8 @@ package shapeCalc;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,12 +19,12 @@ public class ShapeCalc  extends AFrame {
 	
 	protected void initialize() {
 		
-		JTextField typeTF = new JTextField("Square");
+		final JTextField typeTF = new JTextField("Square");
 		JButton newBtn = new JButton("New..");
 		
 		JPanel ctrlPnl = new JPanel();
 		JPanel displayPnl = new JPanel();
-		JLabel areaLbl = new JLabel("Area:"); 
+		final JLabel areaLbl = new JLabel("Area:"); 
 		
 		Container cp = getContentPane();
 		
@@ -32,6 +34,18 @@ public class ShapeCalc  extends AFrame {
 		cp.add(ctrlPnl, BorderLayout.NORTH);
 		cp.add(displayPnl, BorderLayout.CENTER);
 		cp.add(areaLbl, BorderLayout.SOUTH);
+		
+		newBtn.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent event) {
+				
+				String text = typeTF.getText();
+				areaLbl.setText(text);
+				//System.out.println("Print hoyse");
+				
+			}
+			
+		});
 		
 		setSize(400, 400); 
 		setLocationRelativeTo(null);
