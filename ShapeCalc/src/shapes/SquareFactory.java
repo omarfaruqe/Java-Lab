@@ -24,7 +24,8 @@ public class SquareFactory implements IShapeFactory {
 
 			public void paint(Graphics g, int x, int y) {
 				
-				
+				g.drawRect(x,y,(int)length,(int)length);
+				//System.out.println("Bujhtesina");
 			}
 		};
 		return ishape;

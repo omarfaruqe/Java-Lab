@@ -2,6 +2,7 @@ package shapeCalc;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,8 +26,21 @@ public class ShapeCalc  extends AFrame {
 		JButton newBtn = new JButton("New..");
 		
 		JPanel ctrlPnl = new JPanel();
-		JPanel displayPnl = new JPanel();
 		final JLabel areaLbl = new JLabel("Area:"); 
+		
+		JPanel displayPnl = new JPanel() {
+		
+			public void paintComponent(Graphics g) {
+				
+				super.paintComponent(g);
+		
+				SquareFactory.get().makeShape().paint(g,130,90);
+				
+				//System.out.println("Print hoyse");
+			}
+		};
+		
+		
 		
 		Container cp = getContentPane();
 		
