@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import shapes.SquareFactory;
+
 public class ShapeCalc  extends AFrame {
 
 	public ShapeCalc(String title) {
@@ -39,7 +41,9 @@ public class ShapeCalc  extends AFrame {
 
 			public void actionPerformed(ActionEvent event) {
 				
-				String text = typeTF.getText();
+				SquareFactory sq = SquareFactory.get();
+				
+				String text = "Area: " + Double.toString(sq.makeShape().getArea());
 				areaLbl.setText(text);
 				//System.out.println("Print hoyse");
 				

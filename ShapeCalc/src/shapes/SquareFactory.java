@@ -7,11 +7,15 @@ import shapeCalc.IShapeFactory;
 
 public class SquareFactory implements IShapeFactory {
 	
+	static SquareFactory obj = new SquareFactory();
+	
+	private SquareFactory() {}
+	
 	public IShape makeShape() {
 		
 		IShape ishape =new IShape() {
 			
-			private double length=5.0;
+			private double length=100.0;
 			
 			public double getArea() {
 				
@@ -25,4 +29,10 @@ public class SquareFactory implements IShapeFactory {
 		};
 		return ishape;
 	}
+	
+	public static SquareFactory get() {
+		
+		return obj;
+	}
+
 }
