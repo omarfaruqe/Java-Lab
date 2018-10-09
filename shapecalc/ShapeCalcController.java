@@ -4,7 +4,7 @@ public class ShapeCalcController
 {
 	ShapeCalcController()
 	{
-		ShapeCalc sc = new ShapeCalc("Shape Calculator");
+		ShapeCalc sc = new ShapeCalc("Farha's Calculator");
 		sc.validate();
 		sc.setVisible(true);
 	}
