@@ -22,7 +22,7 @@ public class SquareFactory implements IShapeFactory
 					public void paint(Graphics g, int x, int y)
 					{
 						g.setColor(new Color(244, 0, 244));
-						g.drawRect(x - (int)length, y - (int)length, (int)length, (int)length);
+						g.drawRect(x - (int)length / 2, y - (int)length / 2, (int)length, (int)length);
 					}
 			
 				};
