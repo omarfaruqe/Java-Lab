@@ -12,6 +12,8 @@ public class ShapeCalcController {
 		shapeCalc.validate();
 		shapeCalc.setVisible(true);
 		
+		//System.out.println("YeSSSS!! Print hoyse");
+		
 	}
 	
 	public static void main(String[] args) {
