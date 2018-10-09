@@ -3,12 +3,15 @@ package shapecalc.shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import javax.swing.JPanel;
+
 import shapecalc.IShape;
 import shapecalc.IShapeFactory;
 
 public class CircleFactory implements IShapeFactory {
 	public static final CircleFactory Singleton = new CircleFactory();
 	private static Color _selectedColor = Color.BLUE;
+	private static JPanel pnl = new JPanel();
 	
 	public IShape makeShape()
 	{
@@ -31,5 +34,9 @@ public class CircleFactory implements IShapeFactory {
 			
 				};
 		return is;
+	}
+
+	public JPanel getPropertyPanel() {
+		return pnl;
 	}
 }

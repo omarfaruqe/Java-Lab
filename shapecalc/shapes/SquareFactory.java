@@ -2,6 +2,8 @@ package shapecalc.shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import javax.swing.JPanel;
+
 import shapecalc.IShape;
 import shapecalc.IShapeFactory;
 
@@ -9,6 +11,7 @@ import shapecalc.IShapeFactory;
 public class SquareFactory implements IShapeFactory 
 {
 	public static final SquareFactory Singleton = new SquareFactory();
+	private static JPanel pnl = new JPanel();
 	
 	public IShape makeShape()
 	{
@@ -28,5 +31,9 @@ public class SquareFactory implements IShapeFactory
 			
 				};
 		return is;
+	}
+
+	public JPanel getPropertyPanel() {
+		return pnl;
 	}
 }

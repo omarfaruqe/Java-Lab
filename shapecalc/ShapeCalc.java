@@ -50,12 +50,27 @@ public class ShapeCalc extends AFrame
 		ctrlPnl.add(newBtn);
 		newBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IShapeFactory tisf = getFactory(typeTF.getText());			
-				//is = tisf.makeShape();
-				is = tisf.makeShape();
-				
-				areaLbl.setText("Area: " + is.getArea());
-				displayPnl.repaint();
+				IShapeFactory tisf = getFactory(typeTF.getText());
+				new AShapePropertyDlg(ShapeCalc.this, tisf.getPropertyPanel()) 
+				{
+					@Override
+					protected void okBtnClick(ActionEvent e) 
+					{
+						is = tisf.makeShape();
+						
+						areaLbl.setText("Area: " + is.getArea());
+						displayPnl.repaint();
+						this.dispose();
+						
+					}
+
+					@Override
+					protected void cancelBtnClick(ActionEvent e) 
+					{
+						this.dispose();
+					}
+					
+				}.setVisible(true);
 			}
 		});
 	}

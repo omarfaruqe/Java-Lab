@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 
@@ -25,10 +26,24 @@ public abstract class AShapePropertyDlg extends JDialog{
 		getContentPane().add(btnPnl, BorderLayout.SOUTH);
 		getContentPane().add(propPanel, BorderLayout.CENTER);
 		
+		ok.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				okBtnClick(e);
+			}
+		});
+		
+		cancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				cancelBtnClick(e);
+			}
+		});
+		
 		pack(); //to force the panel to show up in an acceptable size
 		setLocationRelativeTo(null); //show up in middle	
 	}
 	
 	protected abstract void okBtnClick(ActionEvent e);
-	protected abstract void cancelButtonClick(ActionEvent e);
+	protected abstract void cancelBtnClick(ActionEvent e);
 }

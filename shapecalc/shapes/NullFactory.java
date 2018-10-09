@@ -1,6 +1,8 @@
 package shapecalc.shapes;
 import java.awt.Graphics;
 
+import javax.swing.JPanel;
+
 import shapecalc.IShape;
 import shapecalc.IShapeFactory;
 
@@ -8,22 +10,8 @@ import shapecalc.IShapeFactory;
 public class NullFactory implements IShapeFactory 
 {
 	public static final NullFactory Singleton = new NullFactory();
-	
-//	private static NullFactory uniqueInstance;
-//	public NullFactory() 
-//	{
-//		
-//	}
-//	
-//	public static NullFactory getInstance() 
-//	{
-//		if(uniqueInstance == null) {
-//			uniqueInstance = new NullFactory();
-//		}
-//		return uniqueInstance;
-//	}
-//	
-	
+	private static JPanel pnl = new JPanel();
+		
 	public IShape makeShape()
 	{
 		IShape is = new IShape()
@@ -41,5 +29,9 @@ public class NullFactory implements IShapeFactory
 			
 				};
 		return is;
+	}
+
+	public JPanel getPropertyPanel() {
+		return pnl;
 	}
 }
