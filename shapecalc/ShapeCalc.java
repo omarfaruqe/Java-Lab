@@ -1,5 +1,6 @@
 package shapecalc;
 
+import shapecalc.shapes.SquareFactory;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.*;
@@ -15,6 +16,7 @@ public class ShapeCalc extends AFrame
 	
 	protected void initialize()
 	{
+		SquareFactory sf = new  SquareFactory();
 		setSize(400, 400); // set size to 400x400 pixels
 		setLocationRelativeTo(null); //center frame on the screen
 		
@@ -34,7 +36,10 @@ public class ShapeCalc extends AFrame
 		newBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//System.out.println("Calling actionPerformed");
-				areaLbl.setText(typeTF.getText());
+				//areaLbl.setText(typeTF.getText());
+				
+				IShape is = SquareFactory.Singleton.makeShape();
+				areaLbl.setText("Area: " + is.getArea());
 			}
 		});
 	}
