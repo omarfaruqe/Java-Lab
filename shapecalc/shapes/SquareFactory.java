@@ -7,12 +7,12 @@ import shapecalc.IShapeFactory;
 
 public class SquareFactory implements IShapeFactory 
 {
-	public static SquareFactory Singleton;
+	public static final SquareFactory Singleton = new SquareFactory();
+
 	
-	public SquareFactory()
+	private SquareFactory()
 	{
-		if (Singleton == null)
-			Singleton = this;
+
 	}
 	
 	public IShape makeShape()
