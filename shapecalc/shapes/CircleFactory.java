@@ -28,7 +28,7 @@ public class CircleFactory implements IShapeFactory {
 						Color oldColor = g.getColor();
 						Color _color = CircleFactory._selectedColor;
 						g.setColor(_color);
-						g.fillOval(x - (int)radius, y - (int)radius, (int)radius, (int)radius);
+						g.fillOval(x - (int)radius / 2, y - (int)radius / 2, (int)radius, (int)radius);
 						g.setColor(oldColor);
 					}
 			
