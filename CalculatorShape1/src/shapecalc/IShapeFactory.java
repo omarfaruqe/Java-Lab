@@ -1,5 +1,11 @@
+
 package shapecalc;
 
-public interface IShapeFactory {
+import javax.swing.JPanel;
 
+public interface IShapeFactory 
+{
+	public abstract IShape makeShape();
+	
+	public abstract JPanel getPropertyPanel();
 }
