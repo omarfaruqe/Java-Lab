@@ -1,9 +1,9 @@
 package shapecalc;
 
 public class ShapeCalcController {
-	private ShapeCalc _shapeCalc;
+	private shapecalc _shapeCalc;
 	public ShapeCalcController() {
-		this._shapeCalc = new ShapeCalc("Shape Calculator");
+		this._shapeCalc = new shapecalc("Shape Calculator");
 		this._shapeCalc.validate();
 		this._shapeCalc.setVisible(true);
 	}
