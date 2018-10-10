@@ -22,6 +22,10 @@ import javax.swing.JTextField;
 
 
 
+import shapes.SquareFactory;
+
+
+
 public class ShapeCalc extends AFrame {
 
 	/**
@@ -79,9 +83,9 @@ public class ShapeCalc extends AFrame {
 
 				// TODO Auto-generated method stub
 
-				String aString = shapeTF.getText();
+				IShapeFactory sf = new SquareFactory();
 
-				areaLbl.setText(aString);
+				areaLbl.setText("Area: " + sf.makeShape().getArea());
 
 			}
 

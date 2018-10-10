@@ -1,6 +1,9 @@
 package shapecalc;
 
-import javax.swing.*;
+
+
+import javax.swing.*;  
+
 
 public abstract class AFrame extends JFrame {
 
@@ -14,6 +17,7 @@ public abstract class AFrame extends JFrame {
 
 	public AFrame(String title) {
 
+
         super(title);
 
 
@@ -21,13 +25,13 @@ public abstract class AFrame extends JFrame {
 
             public void windowClosing(java.awt.event.WindowEvent e) {
 
-                System.out.println(e);  // For illustration purpose only.
-
+                System.out.println(e); 
                 System.exit(0);
 
             }
 
         });
+
 
 
         initialize();
