@@ -1,14 +1,31 @@
 package shapecalc;
 
+
+
 import java.awt.BorderLayout;
+
 import java.awt.Container;
+
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
+
+
 import javax.swing.JButton;
+
 import javax.swing.JLabel;
+
 import javax.swing.JPanel;
+
 import javax.swing.JTextField;
+
+import shape.SquareFactory;
+
+
+
+
+
 
 
 public class ShapeCalc extends AFrame {
@@ -68,6 +85,9 @@ public class ShapeCalc extends AFrame {
 
 				// TODO Auto-generated method stub
 
+				IShapeFactory sf = new SquareFactory();
+
+				areaLbl.setText("Area: " + sf.makeShape().getArea());
 
 			}
 
