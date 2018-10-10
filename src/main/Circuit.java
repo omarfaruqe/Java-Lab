@@ -6,15 +6,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Circuit{
-	double B,R,C,t,v;
+	double B,R,C,t,v,start,end,step;
 	private Scanner sc1;
 	public Circuit(){
 		try {
 			sc1 = new Scanner(new File("params.txt"));
-			
+			step=(end-start)/100
 			B=sc1.nextDouble();
 			R=sc1.nextDouble();
 			C=sc1.nextDouble();
+
+			start=sc1.nextDouble();
+			end=sc1.nextDouble();
 		}
 		catch (Exception ex) {
 			System.out.println("Error in File Reading");
