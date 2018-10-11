@@ -1,8 +1,5 @@
 package shapeCalc;
 
-import java.awt.Component;
-import java.awt.Container;
-
 public class ShapeCalcController
 {
   private ShapeCalc _shapeCalc;
