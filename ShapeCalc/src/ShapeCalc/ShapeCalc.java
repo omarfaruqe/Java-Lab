@@ -1,4 +1,4 @@
-package ShapeCalc;
+package shapeCalc;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -10,42 +10,37 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-@SuppressWarnings("serial")
-public class ShapeCalc extends AFrame{
-	private JLabel areaLbl;
-	private JTextField typeTF;
-	String text;
-
+public class ShapeCalc extends AFrame {
+	private static final long serialVersionUID = 1L;
 	public ShapeCalc(String title) {
 		super(title);
 	}
-	@Override
 	protected void initialize() {
-		setSize(400, 400);
+		setSize(400,400);
 		setLocationRelativeTo(null);
 		JPanel ctrlPnl = new JPanel();
 		JPanel displayPnl = new JPanel();
+		JLabel areaLbl = new JLabel("Area: ");
+		JTextField shapeTF = new JTextField("Square");
+	    JButton newBtn = new JButton("New...");
+
 		
-		areaLbl = new JLabel("Area: ");
+		Container cp = getContentPane();
+		cp.add(ctrlPnl, BorderLayout.NORTH);
+		cp.add(displayPnl,BorderLayout.CENTER);
+		cp.add(areaLbl,BorderLayout.SOUTH);
+		ctrlPnl.add(shapeTF);
+	    ctrlPnl.add(newBtn);
+	    
+	    newBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String aString = shapeTF.getText();
+				areaLbl.setText(aString);
+			}
+		});
 		
-		typeTF = new JTextField("Square");
-		JButton newBtn = new JButton("new...");
-		text = areaLbl.getText();
-		areaLbl.setText(text);
-		Container cp;
-		cp = (Container) getContentPane().add(areaLbl);
-		add(ctrlPnl, BorderLayout.NORTH);
-		add(displayPnl, BorderLayout.CENTER);
-		add(areaLbl, BorderLayout.SOUTH);
-		ctrlPnl.add(typeTF);
-		ctrlPnl.add(newBtn);
-		ActionListener listener = new AddActionListener();
-		newBtn.addActionListener(listener);
-	}
-	class AddActionListener implements ActionListener{
-		public void actionPerformed(ActionEvent event){
-			System.out.println("ActionListener Called and ActionPerformed");
-			areaLbl.setText(text+typeTF.getText());
-		}
 	}
 }

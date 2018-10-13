@@ -1,15 +1,14 @@
-package controller;
-import ShapeCalc.ShapeCalc;
+package shapeCalc;
 
 public class ShapeCalcController {
-	String text="Hello";
-	private ShapeCalc shapeCalc = new ShapeCalc("This is Shape Calculator");
-	ShapeCalcController(){
-		shapeCalc.validate();
-		shapeCalc.setVisible(true);
+	private ShapeCalc _shapeCalc;
+	public ShapeCalcController() {
+		this._shapeCalc = new ShapeCalc("Shape Calculator");
+		this._shapeCalc.validate();
+		this._shapeCalc.setVisible(true);
 	}
-
-	public static void main(String[] args){
-		new ShapeCalcController();
+	public static void main(String[] args)
+	{
+	   new ShapeCalcController();
 	}
 }
