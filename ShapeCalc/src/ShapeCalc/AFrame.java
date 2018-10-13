@@ -1,9 +1,10 @@
 package ShapeCalc;
+
 import javax.swing.*;
 @SuppressWarnings("serial")
-
 public abstract class AFrame extends JFrame {
-	public AFrame(String title) {
+
+    public AFrame(String title) {
         super(title);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent e) {
@@ -13,5 +14,4 @@ public abstract class AFrame extends JFrame {
         initialize();
     }
     protected abstract void initialize();
-
 }

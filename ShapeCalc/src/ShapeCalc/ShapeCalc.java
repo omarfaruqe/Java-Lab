@@ -1,24 +1,24 @@
 package ShapeCalc;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
- import javax.swing.JButton;
+
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import ShapeCalc.shapes.*;
-@SuppressWarnings("serial")
 
-public class ShapeCalc extends AFrame {
-	private double length = 100.0;
+@SuppressWarnings("serial")
+public class ShapeCalc extends AFrame{
 	private JLabel areaLbl;
 	private JTextField typeTF;
 	String text;
+
 	public ShapeCalc(String title) {
 		super(title);
 	}
-	@SuppressWarnings("unused")
 	@Override
 	protected void initialize() {
 		setSize(400, 400);
@@ -42,16 +42,10 @@ public class ShapeCalc extends AFrame {
 		ActionListener listener = new AddActionListener();
 		newBtn.addActionListener(listener);
 	}
-	public double getArea() {
-		return length*length;
-	}
 	class AddActionListener implements ActionListener{
 		public void actionPerformed(ActionEvent event){
 			System.out.println("ActionListener Called and ActionPerformed");
-			new SquareFactory();
-			
-			areaLbl.setText(text+getArea());
+			areaLbl.setText(text+typeTF.getText());
 		}
 	}
-
 }
